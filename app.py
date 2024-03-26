@@ -34,8 +34,7 @@ template = Template('''
 def render_requests(node, requests):
     indent = 2
     separators = (', ', ': ')
-    json.dumps(requests, indent=indent, separators=separators)
-    node.requests.text = json.dumps(requests)
+    node.requests.text = json.dumps(requests, indent=indent, separators=separators)
 
 
 @app.route('/favicon.ico', methods=['GET'])
@@ -48,7 +47,7 @@ def clear_requests():
     last_requests = []
     return '', 204
 
-@app.route('/__last_requests__', methods=['GET'])
+@app.route('/__requests__', methods=['GET'])
 def get_last_requests():
     return template.render(render_requests, last_requests), 200
 
