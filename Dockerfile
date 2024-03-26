@@ -1,4 +1,4 @@
-FROM python:3.6-alpine
+FROM python:3.9.19-slim-bullseye
 
 WORKDIR /usr/src/app
 ENV PYTHONPATH=/usr/src/app

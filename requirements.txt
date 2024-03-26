@@ -1,1 +1,2 @@
-Flask==0.12
+Flask==3.0.2
+htmltemplate==2.2.1
